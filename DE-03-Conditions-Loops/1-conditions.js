@@ -52,6 +52,8 @@ const saglık = false;
 
 if (yas >= 18 && cinsiyet == "erkek" && saglık) {
     console.log("askerlik yapabilir");
+    //* & ve demek
+    //* || veya demek
 } else if (saglık == false) {
     console.log("askerlige elverissiz!")
 } else console.log("askerlikten muaf")
@@ -93,7 +95,9 @@ console.log(` ${n1} ${islem1} ${n2} = ${sonuc1} `);
 //? ornek: maasınız asgari ücretten düşük ve eşitse maaşınıza %25 zam yapılsın, değilse maaşınıza %10 zam yapılsın.
 const asgariUcret = 4250;
 const maas = +(prompt("maasınızı giriniz"))
+//* prompt'un solunda ki + input ile alinan degeri interger'a cevirmek icin.
 const zamlıMaas = maas <= asgariUcret ? maas * 1.25 : maas * 1.1;
+//* ? burada if olarak : ise else olarak kullaniliyor.
 
 
 console.log(zamlıMaas);
