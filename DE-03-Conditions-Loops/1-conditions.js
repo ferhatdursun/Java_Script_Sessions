@@ -96,12 +96,12 @@ console.log(` ${n1} ${islem1} ${n2} = ${sonuc1} `);
 const asgariUcret = 4250;
 const maas = +(prompt("maasınızı giriniz"))
 //* prompt'un solunda ki + input ile alinan degeri interger'a cevirmek icin.
+
 const zamlıMaas = maas <= asgariUcret ? maas * 1.25 : maas * 1.1;
 //* ? burada if olarak : ise else olarak kullaniliyor.
 
 
 console.log(zamlıMaas);
-
 
 
 //*Ornek: maasınız borcunuzdan 5000 ve üstü kadar fazlaysa 
