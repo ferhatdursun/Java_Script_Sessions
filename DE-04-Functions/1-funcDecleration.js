@@ -22,6 +22,8 @@ yazdir();//call veya invoke
 yazdir();
 
 
+
+
 //* Örnek2: parametreli fonksiyon
 //****************************************************************/
 
@@ -32,7 +34,6 @@ function adYazdir(ad, ikinci, soyad) {
 
 }
 
-adYazdir("Ferhat", "Dursun", "Öztürk")
 
 
 // ? ==========================================================
