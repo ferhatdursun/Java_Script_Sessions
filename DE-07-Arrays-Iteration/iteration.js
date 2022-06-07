@@ -299,3 +299,128 @@ console.log(prices);
 // console.log(prices);
 
 
+
+//* ======================================================
+//*                       FILTER METHOD
+//* ======================================================
+//* prices array'inde fiyatı 250 TL den az olanlari ayri
+//* bir diziye saklayalim.
+
+
+//* ======================================================
+//*                       PIPELINE
+//* ======================================================
+
+
+ //!slide daki soru, pipeline olmazsa böyle uzun uzun if le çözeriz
+//* Fiyatı 100 TL den fazla olanlara %10 zam, 100 TL den az olanlara ise %15 zam yapılmak isteniyor. Ayrıca, zamlı olan yeni değerleri örnekteki gibi diziye saklamak istiyoruz.
+const tlFiyatlar = [100, 150, 100, 50, 80];
+
+const değerler = tlFiyatlar.map(function (d, i) {
+  if (d > 100) {
+    return `${i + 1}. Ürün Fiyatı: ${(d * 1.1).toFixed(2)}`;
+  } else {
+    return `${i + 1}. Ürün Fiyatı: ${(d * 1.15).toFixed(2)}`;
+  }
+});
+
+console.log(değerler);
+
+
+
+//* ======================================================
+//*                       FILTER METHOD
+//* ======================================================
+//* prices array'inde fiyatı 250 TL den az olanlari ayri
+//* bir diziye saklayalim.
+
+// const prices =  [132, 312, 72, 118.8]
+
+let ayriDizi= prices.filter((p)=>p<250)
+console.log(ayriDizi, prices);
+
+//* ======================================================
+//*                       PIPELINE
+//* ======================================================
+
+//!slide daki soru, pipeline olmazsa böyle uzun uzun if le çözeriz
+//* Fiyatı 100 TL den fazla olanlara %10 zam, 100 TL den az olanlara ise %15 zam yapılmak isteniyor. Ayrıca, zamlı olan yeni değerleri örnekteki gibi diziye saklamak istiyoruz.
+
+const tl_Fiyatlar = [100, 150, 100, 50, 80];
+
+ const degerler = tl_Fiyatlar.map( (d, i)=> {
+   if (d > 100) {
+     return `${i + 1}. Ürün Fiyatı: ${(d * 1.1).toFixed(2)}`;
+   } else {
+     return `${i + 1}. Ürün Fiyatı: ${(d * 1.15).toFixed(2)}`;
+   }
+ });
+
+ console.log(degerler);
+
+
+let ab= tl_Fiyatlar.filter((x)=>x>100).map((x)=>x*1.1)
+
+let b= tl_Fiyatlar.filter((x)=>x<=100).map((x)=>x*1.15)
+console.log(ab,b);
+
+
+
+//*-------------- ÖRNEK -------------------
+//*people dizisinde ismin ilk harfine göre arama yaparak ilgili isimleri listeleyen bir fonksiyon yazınız.
+
+
+const people = [
+  "Baser",
+  "Berivan",
+  "Mehmet",
+  "Mustafa",
+  "Mali",
+  "Halil",
+  "Fatih",
+  "Hasret",
+  "Fatma",
+];//*-------------- ÖRNEK -------------------
+//*people dizisinde ismin ilk harfine göre arama yaparak ilgili isimleri listeleyen bir fonksiyon yazınız.
+const people_1 = [
+  "Baser",
+  "Berivan",
+  "Mehmet",
+  "Mustafa",
+  "Mali",
+  "Halil",
+  "Fatih",
+  "Hasret",
+  "Fatma",
+];
+
+const bulHarf=(parametre)=>{
+const yeni=parametre.toUpperCase()
+people_1.filter((a)=>a.startsWith(yeni)).forEach((x)=>console.log(x))
+}
+
+bulHarf("b")
+bulHarf("M")
+
+
+//* ======================================================
+//*                       REDUCE METHOD
+//* ======================================================
+
+
+//* salaries toplamini bulunuz.
+const salaries = [3000, 5000, 4000, 6000, 6500];
+
+let toplam2=salaries.reduce((toplam,dizieleman)=>toplam+dizieleman,0)
+
+
+console.log(toplam2);
+//maas ortalaması
+console.log(toplam2/salaries.length);
+
+//!for eache ach metodu arraylerde geçerlidir, tek eleman döndüren durumlarda geçersizdir 
+
+//* salaries dizisindeki elemanların çarpımını bulunuz.
+let carpim2=  salaries.reduce((carpim, dizieleman) => carpim * dizieleman, 1);
+
+console.log(carpim2);
