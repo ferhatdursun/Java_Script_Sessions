@@ -8,7 +8,7 @@
 // ! Sonradan değeri değiştirilemez (non-primitive'ler (array..) hariç).
 
 
-const yas = 25;
+const yas = [25] - [2];
 
 console.log(yas);
 

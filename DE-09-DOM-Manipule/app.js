@@ -152,7 +152,7 @@ document.querySelector(".btn").onclick = () => {
     "YellowGreen",
   ];
 
-  const rastgele = Math.floor(Math.random() * renkler.length)
+  //*const rastgele = Math.floor(Math.random() * renkler.length)
 
 
   const rastgele1 = Math.floor(Math.random() * renkler.length)
