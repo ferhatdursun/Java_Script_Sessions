@@ -21,6 +21,9 @@ this.ferhat=function(){
 this.title = titlE;
 
 }
+//? new keyword ü  Book Constructor ı parametrelerle çağırır.
+//? Constructor, Book object in bir örneğini kalıbını oluşturur.
+//? Constructor daki tüm variables ve functions, oluşturulan her  single örneğe (instance) eklenir
 
 const book1= new Book("the brothers karamazov","Dostyevski", 1835)
 console.log(book1);
@@ -39,3 +42,42 @@ book1.getirBaslik=function(){
 console.log(book1);
 console.log(book2);
 
+//!kalıp ta prototype alanına ulaşmak için alttaki gibi bir syntax kullanılır
+//*Book un prototype alanına yeni bir parametre ekledik ama bellekte yer kaplamaz, ihtiyaç olunca child lar kullanır
+Book.prototype.tür="novel";
+Book.prototype.getirYil=function(){
+ return new Date().getFullYear()-this.year
+}
+//*prototype book2 de yer kaplamadı ama çağırınca geldi
+console.log(book2.getirYil());
+console.log(book2);
+console.log(book2.tür);
+//*book2 nin (Book atasının prototype inden gelen parametresini değiştirdik)
+book2.tür="story"
+console.log(book2.tür);
+
+//! instance(child larda) prototype e ulaşmak için __proto__ yazılır
+book1.__proto__.tür="roman"
+console.log(book1);
+
+
+
+//!OKUL YÖNETİMİ HATIRLA
+//?İNHERİTANCE
+
+
+function Dergi(title,author,year,montH){
+ //*parent object constructor ı çağırdım
+ Book.call(this,title, author,year)
+ //*kendimden parametre ekledim
+ this.month=montH
+}
+
+//*Book object inden (kalıbından) türetilen Dergi kalıbına, Book un prototype alanındaki bilgiler (ES5 te) direk gelmez,gelmesini istiyorsak aalttaki kodu yazmalıyız
+Dergi.prototype= Object.create(Book.prototype)
+
+const dergi1=new Dergi("yaprak dokumu","Resat Nuri Güntekin",1900,"september")
+
+console.log(dergi1);
+console.log(dergi1.tür);
+console.log(dergi1.getirYil());
