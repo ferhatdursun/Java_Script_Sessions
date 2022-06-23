@@ -32,24 +32,24 @@
 
 console.log('promise');
 
-// const promise = new Promise((resolve, reject) => {
-//   const person = {
-//     name: 'ali',
-//     surname: 'koc',
-//   };
-//   resolve(person);
-//   reject(new Error('Promise basarisiz'));
-// });
+const promise = new Promise((resolve, reject) => {
+  const person = {
+    name: 'ali',
+    surname: 'koc',
+  };
+  resolve(person);
+  reject(new Error('Promise basarisiz'));
+});
 
-// console.log(promise);
+console.log(promise);
 
-// promise
-//   .then((response) => {
-//     console.log(response);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+promise
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 //* Example-2: TEA TIME
 //* -----------------------------------------------------------------------

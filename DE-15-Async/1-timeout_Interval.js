@@ -36,18 +36,18 @@
 //* Asenkron (setTimeout)
 //* ---------------------------------------------------------------
 //? callback hell
-// setTimeout(() => {
-//   console.log('matthew: SA Ferhat');
-//   setTimeout(() => {
-//     console.log('ferhat: SA Matthew');
-//     setTimeout(() => {
-//       console.log('Ahmet: kolay gelsin');
-//       setTimeout(() => {
-//         console.log('ferhat: buyrun nasıl yardımcı olabilirim');
-//       }, 2000);
-//     }, 2000);
-//   }, 2000);
-// }, 2000);
+setTimeout(() => {
+  console.log('matthew: S.A Ferhat');
+  setTimeout(() => {
+    console.log('ferhat: A.S Matthew');
+    setTimeout(() => {
+      console.log('Ahmet: kolay gelsin');
+      setTimeout(() => {
+        console.log('ferhat: buyrun nasıl yardımcı olabilirim');
+      }, 2000);
+    }, 10000);
+  }, 2000);
+}, 2000);
 
 // console.log('ferhat: AS Matthew');
 // console.log('ferhat: nasıl gidiyor?');
@@ -61,13 +61,13 @@
 //*----------------------------------------------------------
 //? setInterval
 
-// console.log('counter started');
+console.log('counter started');
 
-// let counter = 0;
+let counter = 0;
 
-// const interval1 = setInterval(() => {
-//   console.log(++counter);
-//   if (counter === 5) {
-//     clearInterval(interval1);
-//   }
-// }, 1000);
+const interval1 = setInterval(() => {
+  console.log(++counter);
+  if (counter === 5) {
+    clearInterval(interval1);
+  }
+}, 1000);
